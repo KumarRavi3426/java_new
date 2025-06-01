@@ -1,0 +1,8 @@
+
+tries _ also known as
+    prefix tree
+    digital search tree
+    retrieval tree
+
+Count unique substrings
+    for any word _ to get all its substrings we can either take "all prefixes of all suffixes" OR "all suffixes of all prefixes"

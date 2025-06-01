@@ -1,0 +1,74 @@
+
+
+for(int i=0; i<graphs.graph.length; i++){      // we need to initialize them in start otherwise it will give null pointer exception
+    graphs.graph[i] = new ArrayList<>();
+}
+
+we can store graph in four forms
+
+V vertices, E edges
+X neighbours
+    Adjacency list
+        array of arraylists of edges, each index of the array represent one vertex, and the arraylist at that place consists of all edges connected to that vetex
+        O(X) to find all neighbours
+    Adjacency matrix
+        2d Matrix to store all edges, with weights used as values stored in the matrix
+        O(V) to find all neighbours
+        extra space used where we don't even have an edge,
+    Edge List
+        Solution List of all edges
+        used to find MST (minimum spanning tree)
+    implicit graph
+        form of 2d array
+        all four neighbors are possible
+
+BFS ( Breadth first search )
+    vis[] arr _ of size equal to number of vertices
+    go to immediate neighbors first
+    indirect level order traversal
+    O (V+E) _ Vertices + Edges
+
+A graph can also have disconnected components/ segments
+
+DFS (Depth first search)
+    go deep into that one node, then child's nodes, and so on; after that go another neighbour
+    visit current node, and then call dfs on other neighbors, if they are not visited
+
+Topological sorting
+    It is used only for DAGs (not for non-DAGs)
+    Directed Acyclic Graph(DAG) is a directed graph with no cycles.
+    It is a linear order of vertices such that every directed edge u -> v, the vertex u comes before v in the order.
+
+dijkstras algorithm (shortest distance from source to all vertices)
+    similar to bfs approach
+    greedy approach
+    use of Prior. Queue, comparable interface_ compareTo function @Override
+    doesn't work on negative edge weights
+
+
+Bellman ford algorithm (shortest distance from source to all vertices)
+    works on negative edge weights
+    doesn't work on negative weight cycle, in that case the shortest distance will keep on reducing after every cycle
+
+Prims - Minimum Spanning Tree ( MST )
+    to find the minimum spanning tree (mst)
+    similar to dijkstras
+    needs priority queue
+
+Kosarajus - to find Strongly connected components (Scc) - makes sense only in directed graphs
+    reverse dfs approach
+
+Bridge in graphs _ Tarjan's algorithm
+    an edge deleting which increases the no. of disconnected components
+    generally in undirected graphs
+    condition of bridge in bridge2.png _ if(dt[curr]<low[e.dest]) _ i.e. if the discovery time of curr is lower than lowest of neighbour
+
+Articulation point _ Tarjan's algorithm
+    Solution vertex deleting which increases the no. of disconnected components
+    neighbour and child are two different things
+
+
+
+==================== Doubts ============================
+why the index in array and value of vertex are assumed same
+
